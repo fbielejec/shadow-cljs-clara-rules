@@ -21,7 +21,7 @@
     (clara/insert! {:type :wind :mph 45})))
 
 (defrule is-windy
-  [:wind [{mph :mph}] (> mph 30) (== ?w mph)]
+  [:wind [{mph :mph}] (> mph 30) ]
 
   =>
 

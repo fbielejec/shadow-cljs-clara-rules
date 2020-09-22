@@ -17,7 +17,7 @@
     (prn "@@@ is-cold")
     ;; uncommenting results in a warning `Use of undeclared Var app.core/fu`
     (fu)
-
+    ;; Error: No protocol method ISwap.-swap! defined for type null:
     (clara/insert! {:type :wind :mph 45})))
 
 (defrule is-windy

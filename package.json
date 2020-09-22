@@ -1,0 +1,15 @@
+{
+  "name": "shadow-cljs-clara-rules",
+  "version": "1.0.0-SNAPSHOT",
+  "license": "MIT",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "deps": "yarn install --frozen-lockfile",
+    "watch": "shadow-cljs watch core",
+    "offline": "node core.js"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.7.17"
+  }
+}

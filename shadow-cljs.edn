@@ -1,0 +1,24 @@
+{:source-paths ["src"]
+ :jvm-opts ["-Xmx2G"]
+ :dependencies [[refactor-nrepl "2.5.0"]
+                [cider/cider-nrepl "0.25.3"]
+                [cider/piggieback "0.4.1"]
+                [com.cerner/clara-rules "0.21.0"]]
+
+ :nrepl {:middleware [cider.piggieback/wrap-cljs-repl
+                      refactor-nrepl.middleware/wrap-refactor]}
+
+ :http {:port 3449
+        :host "0.0.0.0"}
+
+ :cache-blockers #{clara.rules}
+
+ :builds {:core
+          {:target :node-script
+           :hashbang false
+           :output-dir "."
+           :output-to "core.js"
+           :main app.core/main
+           :devtools {:after-load app.core/start!
+                      :before-load app.core/stop!
+                      :repl-init-ns app.core}}}}

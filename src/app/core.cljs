@@ -19,7 +19,7 @@
 
   (prn "@@@ notifs/is-cold-and-windy-map")
   ;; uncommenting results in a warning `Use of undeclared Var app.core/fu`
-  #_(fu))
+  (fu))
 
 (defn start! []
   (prn "stop"))

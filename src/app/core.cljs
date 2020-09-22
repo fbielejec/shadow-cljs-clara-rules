@@ -1,13 +1,7 @@
 (ns app.core
   (:require [clara.rules :as clara :refer-macros [defrule defsession defquery]]))
 
-(defsession session 'app.core
-  :fact-type-fn :type)
-
-(defn test-rules []
-  (-> session
-      (clara/insert {:type :temp :degrees 15})
-      (clara/fire-rules)))
+(clara/clear-ns-productions!)
 
 (defn fu []
   (prn "bar"))
@@ -32,3 +26,11 @@
 
 (comment
   (test-rules))
+
+(defsession session 'app.core
+  :fact-type-fn :type)
+
+(defn test-rules []
+  (-> session
+      (clara/insert {:type :temp :degrees 15})
+      (clara/fire-rules)))
